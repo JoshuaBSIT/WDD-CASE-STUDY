@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class ApiService {
   headers: HttpHeaders;
 
@@ -20,6 +18,14 @@ export class ApiService {
   addStudent(data){
     return this.http.post('http://localhost/IONIC_CRUD_APP/backend/create.php',data);
 
+  }
+
+  getStudents(){
+    return this.http.get('http://localhost/IONIC_CRUD_APP/backend/getstudents.php');
+  }
+
+  deleteStudent(id){
+    return this.http.delete('http://localhost/IONIC_CRUD_APP/backend/delete.php?id='+id);
   }
 }
 

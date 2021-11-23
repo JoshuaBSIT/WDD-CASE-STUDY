@@ -6,10 +6,12 @@
     $student_no = $data['student_no'];
     $student_name = $data['student_name'];
     $student_add = $data['student_add'];
+    $student_course = $data['student_course'];
+    $student_year = $data['student_year'];
     $message = array();
 
     //create q query to add records to the database
-    $query = "INSERT INTO students(student_no, student_name, student_add) VALUES ('$student_no','$student_name','$student_add')";
+    $query = "INSERT INTO students(student_no, student_name, student_add, student_course, student_year) VALUES ('$student_no','$student_name','$student_add','$student_course','$student_year')";
     $result = mysqli_query($con, $query);
 
     if($result){
