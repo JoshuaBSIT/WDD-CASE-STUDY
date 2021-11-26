@@ -11,6 +11,9 @@
                     echo '<tr>';
                     echo '<td>'.$row['first_name'].'</td>';
                     echo '<td>'.$row['last_name'].'</td>';
+                    echo '<td>'.$row['date_of_birth'].'</td>';
+                    echo '<td>'.$row['email'].'</td>';
+                    echo '<td>'.$row['addres'].'</td>';
                     echo '</tr>';
                     echo '<table>';
                 endwhile;
