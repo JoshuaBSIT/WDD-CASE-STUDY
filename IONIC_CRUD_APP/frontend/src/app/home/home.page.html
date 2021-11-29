@@ -39,12 +39,14 @@
     </ion-col>
   </ion-row>
 
+  
   <ion-row>
     <ion-col>
       <ion-button type="button" (click)="getStudents()" color="primary" shape="full" expand="block">View Student</ion-button>
     </ion-col>
   </ion-row>
 </ion-list>
+
 <!--Add component to display items-->
 <ion-list>
   <ion-list-header>Student List </ion-list-header>
@@ -53,8 +55,8 @@
     <h5>{{student.student_no}} - ({{student.student_name}}, {{student.student_add}}, {{student.student_course}}, {{student.student_year}}) </h5>
   </ion-label>
   <div class="item-note">
-    <ion-icon name="create" style="zoom: 2.0;"> </ion-icon>
-    <ion-icon name="trash" style="zoom: 2.0;" (click)="deleteStudent(student.id)"> </ion-icon>
+    <ion-icon name="create" style="zoom: 2.0" [routerLink]="['/update-student/',student.id]"> </ion-icon>
+    <ion-icon name="trash" style="zoom: 2.0" (click)="deleteStudent(student.id)"> </ion-icon>
   </div>
   </ion-item>
 </ion-list>

@@ -1,4 +1,5 @@
 <?php
+
     require_once('connect.php');
 
     $input = file_get_contents('php://input');
@@ -9,9 +10,11 @@
     $student_course = $data['student_course'];
     $student_year = $data['student_year'];
     $message = array();
+    $id = $_GET['id'];
+ 
 
-    //create q query to add records to the database
-    $query = "INSERT INTO students(student_no, student_name, student_add, student_course, student_year) VALUES ('$student_no','$student_name','$student_add','$student_course','$student_year')";
+    //create the query for update
+    $query = mysqli_query($con, "UPDATE students SET student_no ='$student_no', student_name ='$student_name', student_add ='$student_add', student_course ='$student_course', student_year ='$student_year' WHERE id ='$id' LIMIT 1");
     //$result = mysqli_query($con, $query);
 
     if($query){
@@ -19,7 +22,7 @@
         $message['status'] = "Success";
     }else{
         http_response_code(422);
-        $message['status'] = "error";
+        $message['status'] = "Error";
     }
 
     echo json_encode($message);
