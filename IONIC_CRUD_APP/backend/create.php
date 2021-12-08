@@ -11,7 +11,7 @@
     $message = array();
 
     //create q query to add records to the database
-    $query = "INSERT INTO students(student_no, student_name, student_add, student_course, student_year) VALUES ('$student_no','$student_name','$student_add','$student_course','$student_year')";
+    $query = mysqli_query($con, "INSERT INTO students(student_no, student_name, student_add, student_course, student_year) VALUES ('$student_no','$student_name','$student_add','$student_course','$student_year')");
     //$result = mysqli_query($con, $query);
 
     if($query){
