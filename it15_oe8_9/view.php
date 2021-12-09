@@ -23,6 +23,7 @@ require_once('connect.php');
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Gender</th>
                     <th>Email</th>
                     <th>Date of Birth</th>
                     <th>Address</th>
@@ -39,11 +40,12 @@ require_once('connect.php');
             <tr> 
                 <td> <?php echo $row ['first_name'] ?></td>
                 <td> <?php echo $row ['last_name'] ?></td>
+                <td> <?php echo $row ['gender'] ?></td>
                 <td> <?php echo $row ['email'] ?></td>
                 <td> <?php echo $row ['date_of_birth'] ?></td>
                 <td> <?php echo $row ['addres'] ?></td>
                 <td> <?php echo $row ['reg_date'] ?></td>
-                <td><a class="btn btn-info" href="">Update</a>&nbsp;<a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+                <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>">Update</a>&nbsp;<a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
             </tr>
     <?php
         }//end of if $result 
